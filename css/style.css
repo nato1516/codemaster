@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
+
+/* =========================================================
+RESET
+========================================================= */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.4s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* =========================================================
+VARIABLES
+========================================================= */
+:root {
+    --bg: #F8FAFC;
+    --white: #FFFFFF;
+    --text: #0D1B2A;
+
+    --surface: #FFFFFF;
+    --surface-dark: #0D1B2A;
+
+    --accent: #2563EB;
+    --accent-dark: #1D4ED8;
+    --accent-light: #DBEAFE;
+
+    --amber: #F59E0B;
+    --amber-dark: #D97706;
+    --amber-light: #FEF3C7;
+
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --primary-light: #DBEAFE;
+
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-600: #64748B;
+
+    --shadow: rgba(13, 27, 42, 0.08);
+    --shadow-blue: rgba(37, 99, 235, 0.15);
+
+    --font-title: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* =========================================================
+NAVBAR
+========================================================= */
+.barraNavegacion {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 0;
+    background: rgba(13, 27, 42, 0.97);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+nav {
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navConten {
+    display: flex;
+    gap: 40px;
+}
+
+.navLink {
+    color: #94A3B8;
+    font-family: var(--font-body);
+    font-weight: 500;
+    position: relative;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.navLink:hover {
+    color: #FFFFFF;
+}
+
+.navLink:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.boton button {
+    background: var(--accent);
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.boton button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-icon path {
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.logo-text {
+    font-family: var(--font-title);
+    font-size: 26px;
+    color: var(--white);
+}
+
+.logo-highlight {
+    color: var(--amber);
+}
+
+/* =========================================================
+HEADER / HERO
+========================================================= */
+header {
+    height: 100vh;
+    width: 100%;
+    background:
+        linear-gradient(to right, rgba(13, 27, 42, 0.96), rgba(13, 27, 42, 0.55)),
+        url(../img/fondo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.informacionHeader {
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.informacionHeader span {
+    color: var(--amber);
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: 5rem;
+    line-height: 1;
+    width: 60%;
+    letter-spacing: 2px;
+}
+
+p {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 600px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.botonesHeader {
+    padding-top: 20px;
+    width: 310px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botonesHeader button {
+    background: var(--accent);
+    border: none;
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botonesHeader button:last-child {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.botonesHeader button:hover {
+    transform: translateY(-3px);
+    background: var(--accent-dark);
+}
+
+.botonesHeader button:last-child:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+EMPRESAS
+========================================================= */
+.empresas {
+    background: var(--bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.empresasLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.empresasLogo span {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text);
+    background: var(--surface);
+    padding: 14px 26px;
+    border-radius: 30px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 6px 18px var(--shadow);
+    cursor: default;
+    transition: 0.3s ease;
+}
+
+.empresasLogo span:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+    color: var(--primary);
+}
+
+
+/* =========================================================
+CARDS CURSOS
+========================================================= */
+.sectionCard {
+    padding: 80px 0;
+    background-color: var(--surface-dark);
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 35px;
+    color: var(--amber);
+    letter-spacing: 1px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--gray-100);
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 4px 20px var(--shadow);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px var(--shadow-blue);
+    background-color: var(--surface-dark);
+}
+
+.card:hover h3 {
+    color: #FFFFFF;
+}
+
+.card:hover p {
+    color: #94A3B8;
+}
+
+.card:hover .iconoCard {
+    color: var(--amber);
+}
+
+.iconoCard {
+    font-size: 46px;
+    color: var(--accent);
+    padding-bottom: 20px;
+}
+
+.card h3 {
+    font-family: var(--font-title);
+    font-size: 28px;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: var(--gray-600);
+    text-align: center;
+    width: 80%;
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.card button {
+    background: var(--accent);
+    border: none;
+    color: #FFFFFF;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.card:hover button {
+    background: var(--amber);
+    color: var(--text);
+}
+
+.card button:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+INSTRUCTORS — 3D FLIP CARDS
+========================================================= */
+.sectionIntrucote {
+    padding: 80px 0;
+    background-color: var(--bg);
+}
+
+.instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    perspective: 1200px;
+}
+
+.card-flip {
+    height: 320px;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(.4, 0, .2, 1);
+}
+
+.card-flip:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-front {
+    border: 1px solid var(--gray-200);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-front-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 20px 20px;
+    background: linear-gradient(to top, rgba(13, 27, 42, 0.92), transparent);
+}
+
+.card-front-info h3 {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 3px;
+}
+
+.card-front-info span {
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #FFFFFF;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    justify-content: space-between;
+}
+
+.card-back-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-back-header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--accent-light);
+}
+
+.card-back-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 2px;
+}
+
+.card-back-header span {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.card-divider {
+    height: 1px;
+    background: var(--gray-200);
+}
+
+.card-description {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.card-tags span {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    border: 1px solid #BFDBFE;
+    font-weight: 500;
+}
+
+.card-social {
+    display: flex;
+    gap: 8px;
+}
+
+.card-social a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-600);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.card-social a:hover {
+    color: #FFFFFF;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* =========================================================
+PRICING
+========================================================= */
+.price {
+    background: var(--surface-dark);
+    padding: 80px 20px;
+    text-align: center;
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-subtitle {
+    color: #94A3B8;
+    margin-bottom: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.cardPrice {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cardP {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    width: 300px;
+    border-radius: 16px;
+    padding: 32px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardP:hover {
+    transform: translateY(-10px);
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+.cardP h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.price-value {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 15px 0;
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+}
+
+.cardP ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.cardP ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 14px;
+    color: #94A3B8;
+}
+
+.cardP ul li:last-child {
+    border-bottom: none;
+}
+
+.cardP button {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 13px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.cardP button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.featured {
+    background: var(--accent);
+    border: none;
+    transform: scale(1.06);
+    position: relative;
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.35);
+}
+
+.featured .price-value {
+    color: var(--amber);
+}
+
+.featured ul li {
+    color: #BFDBFE;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.featured button {
+    background: #FFFFFF;
+    color: var(--accent-dark);
+    border: none;
+}
+
+.featured button:hover {
+    background: var(--amber);
+    color: var(--text);
+}
+
+.featured::before {
+    content: "POPULAR";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--amber);
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* =========================================================
+RESPONSIVE DESIGN
+========================================================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    header {
+        background:
+            linear-gradient(to right, rgba(13, 27, 42, 0.96), rgba(13, 27, 42, 0.55)),
+            url(../img/fondo2.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .informacionHeader{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    h1 {
+        font-size: 3.8rem;
+        width: 80%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instructors-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardPrice {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .card-flip {
+        height: 500px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    h1 {
+        font-size: 2.8rem;
+        width: 100%;
+    }
+
+    nav {
+        width: 90%;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+    }
+
+    .navConten {
+        position: absolute;
+        top: 55px;
+        right: -25px;
+        height: 100vh;
+        width: 70%;
+        background: rgba(13, 27, 42, 0.932);
+        flex-direction: column;
+        gap: 30px;
+        display: none;
+        text-align: center;
+        padding: 0px;
+        margin: 0;
+        z-index: 1000;
+        justify-content: center;
+    }
+
+    .navConten.active {
+        display: flex;
+    }
+
+    .navConten li {
+        padding: 15px 0;
+    }
+
+    .boton {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .instructors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .empresasLogo {
+        gap: 12px;
+    }
+
+    .empresasLogo span {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    .cardPrice {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardP {
+        width: 90%;
+    }
+
+    .card-flip {
+        height: 400px;
+    }
+
+    .price {
+        padding: 60px 15px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .navConten {
+        display: none;
+        /* opcional: menú simplificado */
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+    .botonesHeader{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
